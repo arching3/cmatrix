@@ -8,9 +8,14 @@
 행렬의 사칙연산 구현과 웹에서 직접 쉘을 조작해 연산하는 기능까지 구현.
 
 ## Reference
+|variable|etc|
+|--------|---|
+|`typedef struct mat`|`{int *arr--array, int r--row, int c-columm}`|
+
+
 |functions|parm|desc|
 |---------|----|----|
-|`void print`|`mat*`|rint content of matrix.|
+|`void print`|`mat*`|Print content of matrix.|
 |`mat *add`|`(mat*, mat*)`|Add two matrix and return matrix pointer.|
 |`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
 |`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
