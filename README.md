@@ -10,7 +10,7 @@
 ## Reference
 |functions|parm|desc|
 |---------|----|----|
-|`void print`|`mat*`|print content of matrix.|
+|`void print`|`mat*`|rint content of matrix.|
 |`mat *add`|`(mat*, mat*)`|Add two matrix and return matrix pointer.|
 |`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
 |`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
