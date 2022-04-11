@@ -7,7 +7,19 @@
 # 목표
 행렬의 사칙연산 구현과 웹에서 직접 쉘을 조작해 연산하는 기능까지 구현.
 
-# 사용법
+## Reference
+|functions|parm|desc|
+|---------|----|----|
+|`void print`|`mat*`|print content of matrix.|
+|`mat *add`|`(mat*, mat*)`|Add two matrix and return matrix pointer.|
+|`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
+|`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
+|`void copy`|`(double*, double*, size_t)`|Copies a portion of one array to another.|
+|`void swap`|`(double*, double*)`|Swap each other.|
+|`mat *mat_init_f`|`(FILE*)`|Initialize matrix using data read from file and return matrix pointer.|
+|`mat *mat_init_a`|`(double*, int, int)`|Initialize matrix using given 1d-array, columm, row and return matrix pointer.|
+|`mat *mat_init_n`|`(int, int)`|Initialize matrix using random number -- based on normal-distribution, given columm, row.|
+
 
 ## 파일포맷
 첫 번째 행에서 행과 열의 값을 입력하고
@@ -25,12 +37,3 @@ ex)
 11 3
 5 2
 ```
-## 옵션
-* -a 덧셈
-* -p 곱셈
-* -s 뺄셈
-
-## 명령줄
-1. `cmatrix`
-2. `cmatrix [OPTIONS] [FILE]`
-
