@@ -23,7 +23,7 @@
 |`void swap`|`(double*, double*)`|Swap each other.|
 |`mat *mat_init_f`|`(FILE*)`|Initialize matrix using data read from file and return matrix pointer.|
 |`mat *mat_init_a`|`(double*, int, int)`|Initialize matrix using given 1d-array, columm, row and return matrix pointer.|
-|`mat *mat_init_n`|`(int, int)`|Initialize matrix using random number -- based on normal-distribution, given columm, row.|
+|`mat *mat_init_n`|`(int, int)`|Initialize matrix using random number that based on normal-distribution.|
 
 
 ## 파일포맷
