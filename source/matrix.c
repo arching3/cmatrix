@@ -4,29 +4,34 @@
 
 
 void print(mat *matrix){
-	for(int i = 0;i<mat->r*mat->c;i++){
-		printf("%f, ",mat->arr[i]);
-		if(((i+1)%mat->r)==0){
+	for(int i = 0;i<matrix->r*matrix->c;i++){
+		printf("%f, ",matrix->arr[i]);
+		if(((i+1)%matrix->r)==0){
 			printf("\n");
 		}
 	}
 }
-mat *mat_init(FILE *fp){
+
+
+mat *mat_init_f(char *name){
 	mat *matrix = (mat *)malloc(sizeof(mat));
-	int c,r;
-	fscanf(fp,"%f %f",&r,&c);
-	matrix->r=r;
-	matrix->c=c;
-	matrix->arr = (double *)malloc(sizeof(double)*(r*c));
-	for(int i = 0;i<r*c;){
-		if(!fscanf("%f",matrix->&arr[i])){
-			matrix->arr[i] = 0;
-		};
+
+	FILE *fp = fopen(name,"r");
+	fscanf(fp,"%d %d",&matrix->r,&matrix->c);
+	matrix->arr = (double *)malloc(sizeof(double)*(matrix->r*matrix->c));
+	for(int i = 0;i<matrix->r*matrix->c;i++){
+		fscanf(fp,"%lf",&matrix->arr[i]);
 	}
+	fclose(fp);
 	return matrix;
 }
-mat *mat_init(double *arr, int c, int r){}
-mat *mat_init(int c, int r){}
+
+
+mat *mat_init_a(double *arr, int c, int r){
+	mat *matrix = (mat *)malloc(sizeof(mat));
+	return matrix;
+}
+mat *mat_init_n(int c, int r){}
 
 void copy(double *dest, double *src, size_t size){}
 void swap(double *a, double *b){};
