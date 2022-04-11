@@ -2,63 +2,35 @@
 #include <stdlib.h>
 #include "matrix.h"
 
-char *cmd = {"-a", "-p", "-s"};
-m *matrix(int argc, char *args[]){
 
-	FILE *file = fopen(args[1],"r");
-	if(file == NULL){
-		return NULL;
+void print(mat *matrix){
+	for(int i = 0;i<mat->r*mat->c;i++){
+		printf("%f, ",mat->arr[i]);
+		if(((i+1)%mat->r)==0){
+			printf("\n");
+		}
 	}
-
-	char *mod = args[2];
-	m **mat = (m **)malloc(sizeof(m*)*2);
-	mat = proc_file(file);
-	fclose(file);
-
-
-	m result;
 }
-
-
-m **proc_file(FILE *file){
-	m **temp = (m**)malloc(sizeof(m*)*2);
-	temp[0] = (m*)malloc(sizeof(m));
-	temp[1] = (m*)malloc(sizeof(m));
-	int idx=0;
-	int stat=0;
-	while(!feof(file)){
-		char t = fgetc(file);
-		if(t == ' ')idx++;
-		if(t == '\n'){
-			temp[stat]->r++;
-			idx=0;
-		}
-		else if(t == 'e'){
-			temp[stat]->r++;
-			idx--;
-			temp[stat]->c=idx;
-			stat != stat;
-		}
+mat *mat_init(FILE *fp){
+	mat *matrix = (mat *)malloc(sizeof(mat));
+	int c,r;
+	fscanf(fp,"%f %f",&r,&c);
+	matrix->r=r;
+	matrix->c=c;
+	matrix->arr = (double *)malloc(sizeof(double)*(r*c));
+	for(int i = 0;i<r*c;){
+		if(!fscanf("%f",matrix->&arr[i])){
+			matrix->arr[i] = 0;
+		};
 	}
-
-	temp[0]->arr = (int *)malloc(sizeof(int)*temp[0]->c*temp[0]->r)
-	temp[1]->arr = (int *)malloc(sizeof(int)*temp[1]->c*temp[1]->r)
-	stat!=stat;
-	idx=0;
-	rewind(file);
-	while(!feof(file)){
-		char te[300];
-		for(int i = 0;i<temp[stat]->r;i++){
-			for(int j = 0;j<temp[stat]->c;j++){
-			fscanf("%s",te);
-			if(te=="e")break;
-			arr[idx] = atoi(te);
-			}
-		}
-	}
-	return temp;
+	return matrix;
 }
-m *add(m* m1, m* m2){}
-m *sub(m* m1, m* m2){}
-m *mul(m* m1, m* m2){}
-void print(m* rs){}
+mat *mat_init(double *arr, int c, int r){}
+mat *mat_init(int c, int r){}
+
+void copy(double *dest, double *src, size_t size){}
+void swap(double *a, double *b){};
+
+mat *add(mat *m1, mat *m2){}
+mat *sub(mat *m1, mat *m2){}
+mat *mul(mat *m1, mat *m2){}

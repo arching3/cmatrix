@@ -1,14 +1,21 @@
 #include <stdio.h>
 
 typedef struct _MATRIX{
-	int *arr;
-	int c;
+	double *arr;
 	int r;
-}m;
-m *matrix(int, char*[]);
-	
-m **proc_file(FILE *);
-m *add(m*, m*);
-m *sub(m*, m*);
-m *mul(m*, m*);
-void print(m*);
+	int c;
+} mat;
+
+void print(mat *);
+
+mat *add(mat *, mat *);
+mat *sub(mat *, mat *);
+mat *mul(mat *, mat *);
+
+void *copy(double *, double *, size_t);
+void swap(double *, double *);
+
+mat *mat_init(FILE *);
+mat *mat_init(double *, int, int);
+mat *mat_init(int, int);
+
