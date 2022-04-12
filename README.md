@@ -19,26 +19,20 @@
 |`mat *add`|`(mat*, mat*)`|Add two matrix and return matrix pointer.|
 |`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
 |`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
-|`void copy`|`(double*, double*, size_t)`|Copies a portion of one array to another.|
+|`mat *mul_s`|`(double, mat*)`|Scalar product.|
+|`void copy`|`(double*dest, double*src, size_t)`|Copies a portion of src to dest.|
 |`void swap`|`(double*, double*)`|Swap each other.|
+|`mat *mat_init`|`(int, int)`|Initialize matrix to zero.|
 |`mat *mat_init_f`|`(FILE*)`|Initialize matrix using data read from file and return matrix pointer.|
-|`mat *mat_init_a`|`(double*, int, int)`|Initialize matrix using given 1d-array, columm, row and return matrix pointer.|
-|`mat *mat_init_n`|`(int, int)`|Initialize matrix using random number that based on normal-distribution.|
-
+|`mat *mat_init_a`|`(double*, int, int)`|Initialize matrix using given 1d-array, row, columm and return matrix pointer.|
+|`mat *mat_init_r`|`(int, int, long int)`|Initialize matrix using random number that based on gaussian-distribution.|
+|`void mat_free`|`(int, ...)`| Release memory of matrix pointer in `...` |
 
 ## 파일포맷
-첫 번째 행에서 행과 열의 값을 입력하고
+첫 줄에서 행과 열의 값을 입력하고
 행렬을 작성 합니다.
 
-ex)
-```
-3 3
-1 3 4
-2 5 6
-3 6 7
-
-3 2
-222 52
-11 3
-5 2
-```
+> ex)
+> 2 4
+> 3 6 2 4
+> 2 12 52 1
