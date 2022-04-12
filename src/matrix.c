@@ -5,6 +5,7 @@
 
 #include "matrix.h"
 
+double gaussrand();
 
 void print(mat *matrix){
 	if(matrix==NULL){
@@ -75,6 +76,7 @@ mat *mat_init_r(int r, int c, long int seed){
 	return matrix;
 }
 
+//http://mwultong.blogspot.com/2006/10/c-gaussian-gaussian-random-numbers.html
 double gaussrand(){
 	static double v1,v2,s;
 	static int phase = 0;
@@ -95,13 +97,6 @@ double gaussrand(){
 
 	phase = 1 - phase;
 	return x;
-}
-
-
-void copy(double *dest, double *src, size_t size){
-	for(int i = 0;i<size;i++){
-		dest[i] = src[i];
-	}
 }
 
 void swap(double *a, double *b){
