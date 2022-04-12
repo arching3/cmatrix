@@ -114,6 +114,18 @@ int main(){
 ```
 
 ## BUILD
-```bash
-gcc main.c matrix.c
+```
+#1. This way is should be matrix.c in the same folder with main.c
+#This way shoud be write preprocessor like #include "matrix.h"
+gcc main.c matrix.c -lm
+
+
+#2. This way is shoud be downloaded libmatrix.so and designate path.
+gcc main.c -L{PATH} -lmatrix -lm
+
+ex) libmatrix.so is in ~/library
+gcc main.c -L~/library -lmatrix -lm
+
+#This way should be write preprocessor like #include <matrix.h>
+
 ```
