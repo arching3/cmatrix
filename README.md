@@ -2,6 +2,8 @@
 
 백터와 행렬에 한한 연산 라이브러리.
 
+C99 Standard.
+
 ## REFERENCE
 |variable|etc|
 |--------|---|
@@ -109,4 +111,9 @@ int main(){
 
 	mat_free(1,matrix);
 }
+```
+
+## BUILD
+```bash
+gcc main.c matrix.c
 ```
