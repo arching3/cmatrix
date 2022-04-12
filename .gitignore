@@ -29,8 +29,6 @@
 
 # Shared objects (inc. Windows DLLs)
 *.dll
-*.so
-*.so.*
 *.dylib
 
 # Executables
@@ -56,8 +54,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 main.c
-
-
 *.coss
 *.txt
 

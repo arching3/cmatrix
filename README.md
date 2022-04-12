@@ -1,6 +1,7 @@
 # cmatrix
+A library for calculating vectors and two-dimensional matrices.
 
-백터와 행렬에 한한 연산 라이브러리.
+C99 Standard.
 
 ## REFERENCE
 |variable|etc|
@@ -23,9 +24,9 @@
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointer in `...` |
 
 ## FILEFORMAT
-첫 줄에서 행과 열의 값을 입력하고
-행렬을 작성 합니다.
+In the first line, enter values for rows and columns, 
 
+and separate each number with a space to create a matrix.
 <pre>
 2 4
 3 421 5 2
@@ -109,4 +110,42 @@ int main(){
 
 	mat_free(1,matrix);
 }
+```
+
+## BUILD
+```
+#1. This way is should be matrix.c in the same folder with main.c
+#This way shoud be write preprocessor like #include "matrix.h"
+gcc main.c matrix.c -lm
+
+
+#2. This way is shoud be downloaded libmatrix.so and designate path.
+gcc main.c -L{PATH} -lmatrix -lm
+
+ex) libmatrix.so is in ~/library
+gcc main.c -L~/library -lmatrix -lm
+
+#This way should be write preprocessor like #include <matrix.h>
+
+```
+## SIMPLE EXAMPLE
+```C
+#include <stdio.h>
+#include <time.h>
+#include <matrix.h> //libmatrix.so
+
+int main(){
+	mat *m1 = mat_init_r(3,10,time(NULL));
+	mat *m2 = mat_init_r(10,7,time(NULL));
+	mat *result = mul(m1,m2);
+	print(result);
+	/*OUTPUT
+	-3.672,     -3.639,      1.784,      0.039,      6.257,      3.690,     -2.566,
+    -2.228,      2.148,     -3.768,     -1.955,      0.138,      0.263,     -1.658,
+     2.780,     -2.793,      2.390,      4.821,      1.379,     -5.925,      7.295,
+	*/
+
+	mat_free(3,m1,m2,result);
+}
+
 ```
