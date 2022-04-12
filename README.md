@@ -15,7 +15,6 @@ C99 Standard.
 |`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
 |`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
 |`mat *mul_s`|`(double n, mat*)`|Scalar product.|
-|`void copy`|`(double*dest, double*src, size_t)`|Copies a portion of src to dest.|
 |`void swap`|`(double*, double*)`|Swap each other.|
 |`mat *mat_init`|`(int r, int c)`|Initialize matrix to zero.|
 |`mat *mat_init_f`|`(char*)`|Initialize matrix using data read from file and return matrix pointer.|
