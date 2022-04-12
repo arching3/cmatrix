@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 typedef struct _MATRIX{
 	double *arr;
 	int r;
