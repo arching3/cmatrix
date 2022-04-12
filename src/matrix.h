@@ -23,5 +23,5 @@ mat *mat_init_r(int, int, long int);
 void mat_free(int, ...);
 
 
-/*http://mwultong.blogspot.com/2006/10/c-gaussian-gaussian-random-numbers.html*/
+//http://mwultong.blogspot.com/2006/10/c-gaussian-gaussian-random-numbers.html
 double gaussrand();
