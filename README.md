@@ -128,3 +128,24 @@ gcc main.c -L~/library -lmatrix -lm
 #This way should be write preprocessor like #include <matrix.h>
 
 ```
+## SIMPLE EXAMPLE
+```C
+#include <stdio.h>
+#include <time.h>
+#include <matrix.h> //libmatrix.so
+
+int main(){
+	mat *m1 = mat_init_r(3,10,time(NULL));
+	mat *m2 = mat_init_r(10,7,time(NULL));
+	mat *result = mul(m1,m2);
+	print(result);
+	/*OUTPUT
+	-3.672,     -3.639,      1.784,      0.039,      6.257,      3.690,     -2.566,
+    -2.228,      2.148,     -3.768,     -1.955,      0.138,      0.263,     -1.658,
+     2.780,     -2.793,      2.390,      4.821,      1.379,     -5.925,      7.295,
+	*/
+
+	mat_free(3,m1,m2,result);
+}
+
+```
