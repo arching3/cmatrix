@@ -1,6 +1,5 @@
 # cmatrix
-
-백터와 행렬에 한한 연산 라이브러리.
+A library for calculating vectors and two-dimensional matrices.
 
 C99 Standard.
 
@@ -25,9 +24,9 @@ C99 Standard.
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointer in `...` |
 
 ## FILEFORMAT
-첫 줄에서 행과 열의 값을 입력하고
-행렬을 작성 합니다.
+In the first line, enter values for rows and columns, 
 
+and separate each number with a space to create a matrix.
 <pre>
 2 4
 3 421 5 2
