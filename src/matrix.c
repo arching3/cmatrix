@@ -35,6 +35,10 @@ mat *mat_init_f(char *name){
 	mat *matrix = (mat *)malloc(sizeof(mat));
 
 	FILE *fp = fopen(name,"r");
+	if(fp==NULL){
+		printf("%s DOES NOT EXIST.\n",name);
+		return NULL;
+	}
 	fscanf(fp,"%d %d",&matrix->r,&matrix->c);
 	matrix->arr = (double *)malloc(sizeof(double)*(matrix->r*matrix->c));
 	for(int i = 0;i<matrix->r*matrix->c;i++){
@@ -46,7 +50,10 @@ mat *mat_init_f(char *name){
 
 mat *mat_init_a(double *arr, int r, int c){
 	mat *matrix = (mat *)malloc(sizeof(mat));
-	matrix->arr = arr;
+	matrix->arr = (double *)malloc(sizeof(double)*(r*c));
+	for(int i = 0;i<r*c;i++){
+		matrix->arr[i] = arr[i];
+	}
 	matrix->c = c;
 	matrix->r = r;
 	return matrix;
