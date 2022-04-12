@@ -156,10 +156,6 @@ mat *mul(mat *m1, mat *m2){
 	return result;
 }
 
-
-
-
-
 void mul_s(double x, mat *matrix){
 	for(int i = 0;i<matrix->r*matrix->c;i++){
 		matrix->arr[i] *= x;
