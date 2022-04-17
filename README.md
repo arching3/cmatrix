@@ -15,11 +15,12 @@ C99 Standard.
 |`mat *sub`|`(mat*, mat*)`|Sub two matrix and return matrix pointer.|
 |`mat *mul`|`(mat*, mat*)`|Multiply two matrix and return matrix poitner.|
 |`mat *mul_s`|`(double n, mat*)`|Scalar product.|
-|`void swap`|`(double*, double*)`|Swap each other.|
 |`mat *mat_init`|`(int r, int c)`|Initialize matrix to zero.|
 |`mat *mat_init_f`|`(char*)`|Initialize matrix using data read from file and return matrix pointer.|
 |`mat *mat_init_a`|`(double*arr, int r, int c)`|Initialize matrix using given 1d-array, row, columm and return matrix pointer.|
 |`mat *mat_init_r`|`(int r, int c, long int seed)`|Initialize matrix using random number that based on gaussian-distribution.|
+|`void reshape`|`(mat *,int r,int c)`|Change the form of the matrix according to the given values of r and c. but if the total number of elements and the r*c value do not match, the matrix is not changed.|
+|`void resize`}`|`(mat *,int r,int c)`|Change (force) the form of the matrix according to the given values of r and c.|
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointer in `...` |
 
 ## FILEFORMAT
@@ -123,9 +124,6 @@ gcc main.c -L{PATH} -lmatrix -lm
 
 ex) libmatrix.so is in ~/library
 gcc main.c -L~/library -lmatrix -lm
-
-#This way should be write preprocessor like #include <matrix.h>
-
 ```
 ## SIMPLE EXAMPLE
 ```C
