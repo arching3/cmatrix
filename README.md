@@ -115,7 +115,7 @@ int main(){
 ## BUILD
 ```
 #1. This way is should be matrix.c in the same folder with main.c
-#This way shoud be write preprocessor like #include "matrix.h"
+#Preprocessor {INCLUDE} shoud be written like this way "matrix.h"
 gcc main.c matrix.c -lm
 
 
