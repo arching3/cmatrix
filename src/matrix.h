@@ -9,14 +9,14 @@ void print(mat *);
 mat *add(mat *, mat *);
 mat *sub(mat *, mat *);
 mat *mul(mat *, mat *);
-void mul_s(double, mat *);
+void mul_s(mat *,double);
 
-void swap(double *, double *);
+void reshape(mat *, int, int);
+void resize(mat *,int, int);
 
 mat *mat_init(int, int);
 mat *mat_init_f(char *);
 mat *mat_init_a(double *, int, int);
 mat *mat_init_r(int, int, long int);
 void mat_free(int, ...);
-
 

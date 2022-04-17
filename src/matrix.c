@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
@@ -76,6 +77,29 @@ mat *mat_init_r(int r, int c, long int seed){
 	return matrix;
 }
 
+void reshape(mat *matrix, int r, int c){
+	if(r*c!=matrix->r*matrix->c)printf("ROW * COLUMM VALUE AND ELEMENTS NUMBER OF ARRAY DOES NOT MATCH.");
+	else{
+		matrix->r=r;
+		matrix->c=c;
+	}
+}
+
+void resize(mat *matrix, int r, int c){
+	double *temp = (double*)malloc(sizeof(double)*(matrix->r*matrix->c));
+	memcpy(temp,matrix->arr,sizeof(double)*(matrix->r*matrix->c));
+	matrix->arr = (double*)realloc(matrix->arr,sizeof(double)*(r*c));
+	memcpy(matrix->arr,temp,sizeof(double)*(matrix->r*matrix->c));
+	free(temp);
+	int idx=0;
+	for(int i = (matrix->r*matrix->c);i<r*c;i++){
+		matrix->arr[i] = matrix->arr[idx++];
+		idx = idx%(matrix->r*matrix->c);
+	}
+	matrix->r=r;
+	matrix->c=c;
+}
+
 //http://mwultong.blogspot.com/2006/10/c-gaussian-gaussian-random-numbers.html
 double gaussrand(){
 	static double v1,v2,s;
@@ -97,12 +121,6 @@ double gaussrand(){
 
 	phase = 1 - phase;
 	return x;
-}
-
-void swap(double *a, double *b){
-	double t = *a;
-	*a = *b;
-	*b = t;
 }
 
 mat *add(mat *m1, mat *m2){
@@ -151,7 +169,7 @@ mat *mul(mat *m1, mat *m2){
 	return result;
 }
 
-void mul_s(double x, mat *matrix){
+void mul_s(mat *matrix,double x){
 	for(int i = 0;i<matrix->r*matrix->c;i++){
 		matrix->arr[i] *= x;
 	}
