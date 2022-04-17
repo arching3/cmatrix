@@ -53,3 +53,8 @@ c99는 살짝 어렵네,,
 ㅎㅎ 뿌듯
 
 다음 작업은 reshape, rebase, transposition 구현하기다 !
+# 2022-04-18
+## 00:34
+reshape, resize(rebase) 구현 끝.
+다음은 transposition이다.
+
