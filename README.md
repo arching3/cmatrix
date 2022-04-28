@@ -33,7 +33,7 @@ and separate each number with a space to create a matrix.
 55 12 3 4
 </pre>
 
-# USAGE
+# INSTRUCTIONS
 ## FILL ZERO
 ```C
 #include "matrix.h"
