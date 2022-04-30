@@ -21,7 +21,7 @@ C99 Standard.
 |`mat *mat_init_r`|`(int r, int c, long int seed)`|Initialize matrix using random number that based on gaussian-distribution.|
 |`void reshape`|`(mat *,int r,int c)`|Change the form of the matrix according to the given values of r and c. but if the total number of elements and the r*c value do not match, the matrix is not changed.|
 |`int save`|`(char *,mat *)`|Save matrix to file|
-|`void resize`}`|`(mat *,int r,int c)`|Change (force) the form of the matrix according to the given values of r and c.|
+|`void resize`|`(mat *,int r,int c)`|Change (force) the form of the matrix according to the given values of r and c.|
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointers in `...` |
 
 ## FILEFORMAT
