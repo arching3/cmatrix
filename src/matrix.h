@@ -18,5 +18,7 @@ mat *mat_init(int, int);
 mat *mat_init_f(char *);
 mat *mat_init_a(double *, int, int);
 mat *mat_init_r(int, int, long int);
-void mat_free(int, ...);
 
+int save(char *,mat *);
+
+void mat_free(int, ...);

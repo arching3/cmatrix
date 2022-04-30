@@ -100,6 +100,20 @@ void resize(mat *matrix, int r, int c){
 	matrix->c=c;
 }
 
+int save(char *name, mat *matrix){
+	FILE *fp = fopen(name,"w");
+	fprintf(fp,"%d %d\n",matrix->r,matrix->c);
+	if(fp==NULL) return 0;
+	for(int i = 0;i<matrix->r*matrix->c;i++){
+		fprintf(fp,"%f ",matrix->arr[i]);
+		if((i+1)%(matrix->c)==0){
+			fprintf(fp,"\b");
+			fprintf(fp,"\n");
+		}
+	}
+	return 1;
+}
+
 //http://mwultong.blogspot.com/2006/10/c-gaussian-gaussian-random-numbers.html
 double gaussrand(){
 	static double v1,v2,s;
