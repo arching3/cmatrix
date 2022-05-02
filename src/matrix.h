@@ -21,4 +21,5 @@ mat *mat_init_r(int, int, long int);
 
 int save(char *,mat *);
 
+void trans(mat *);
 void mat_free(int, ...);

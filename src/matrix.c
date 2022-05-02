@@ -189,6 +189,23 @@ void mul_s(mat *matrix,double x){
 	}
 }
 
+void trans(mat *matrix){
+	double *temp = (double *)malloc(sizeof(double)*(matrix->r*matrix->c));
+	memcpy(temp,matrix->arr,sizeof(double)*(matrix->r*matrix->c));
+	int idx = 0;
+	for(int i = 0;i<matrix->c*matrix->r;i++){
+		matrix->arr[i] = temp[idx];
+		idx += matrix->c;
+		if(idx>(matrix->r*matrix->c)-1)idx = (idx%(matrix->c))+1;
+	}
+
+	int t = matrix->c;
+	matrix->c = matrix->r;
+	matrix->r = t;
+
+	free(temp);
+}
+
 void mat_free(int argc, ...){
 	va_list ap;
 	va_start(ap, argc);
