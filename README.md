@@ -19,7 +19,7 @@ C99 Standard.
 |`mat *mat_init_f`|`(char*)`|Initialize matrix using data read from file and return matrix pointer.|
 |`mat *mat_init_a`|`(double*arr, int r, int c)`|Initialize matrix using given 1d-array, row, columm and return matrix pointer.|
 |`mat *mat_init_r`|`(int r, int c, long int seed)`|Initialize matrix using random number that based on gaussian-distribution.|
-|`void reshape`|`(mat *,int r,int c)`|Change the form of the matrix according to the given values of r and c. but if the total number of elements and the r*c value do not match, the matrix is not changed.|
+|`int reshape`|`(mat *,int r,int c)`|Change the form of the matrix according to the given values of r and c. If success return 1, else return 0.|
 |`int save`|`(char *,mat *)`|Save matrix to file if success return 1, else return 0.|
 |`void resize`|`(mat *,int r,int c)`|Change (force) the form of the matrix according to the given values of r and c.|
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointers in `...` |

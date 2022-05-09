@@ -11,7 +11,7 @@ mat *sub(mat *, mat *);
 mat *mul(mat *, mat *);
 void mul_s(mat *,double);
 
-void reshape(mat *, int, int);
+int reshape(mat *, int, int);
 void resize(mat *,int, int);
 
 mat *mat_init(int, int);

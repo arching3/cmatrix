@@ -77,11 +77,12 @@ mat *mat_init_r(int r, int c, long int seed){
 	return matrix;
 }
 
-void reshape(mat *matrix, int r, int c){
-	if(r*c!=matrix->r*matrix->c)printf("ROW * COLUMM VALUE AND ELEMENTS NUMBER OF ARRAY DOES NOT MATCH.");
+int reshape(mat *matrix, int r, int c){
+	if(r*c!=matrix->r*matrix->c)return 0;
 	else{
 		matrix->r=r;
 		matrix->c=c;
+		return 1;
 	}
 }
 
