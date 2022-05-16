@@ -116,16 +116,17 @@ int main(){
 
 ## BUILD
 ```
-#1. This way is should be matrix.c in the same folder with main.c
-#Preprocessor {INCLUDE} shoud be written like "matrix.h"
 gcc main.c matrix.c -lm
 
+# If u prefer the library than raw build
+gcc -fPIC -c matrix.c
+gcc -shared -o libmatrix.so matrix.o
 
-#2. This way is shoud be downloaded libmatrix.so and designate path.
-gcc main.c -L{PATH} -lmatrix -lm
+#Then
 
-ex) libmatrix.so is in ~/library
-gcc main.c -L~/library -lmatrix -lm
+gcc main.c -lmatrix -lm
+./a.out
+
 ```
 ## SIMPLE EXAMPLE
 ```C
