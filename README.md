@@ -22,6 +22,7 @@ C99 Standard.
 |`int reshape`|`(mat *,int r,int c)`|Change the form of the matrix according to the given values of r and c. If success return 1, else return 0.|
 |`int save`|`(char *,mat *)`|Save matrix to file if success return 1, else return 0.|
 |`void resize`|`(mat *,int r,int c)`|Change (force) the form of the matrix according to the given values of r and c.|
+|`mat *mat_copy`|`(mat *src)`|Copy matrix src to dst and return dst|
 |`void mat_free`|`(int argc, ...)`| Release memory of matrix pointers in `...` |
 
 ## FILEFORMAT

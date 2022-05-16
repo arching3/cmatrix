@@ -18,6 +18,7 @@ mat *mat_init(int, int);
 mat *mat_init_f(char *);
 mat *mat_init_a(double *, int, int);
 mat *mat_init_r(int, int, long int);
+mat *mat_copy(mat *);
 
 int save(char *,mat *);
 

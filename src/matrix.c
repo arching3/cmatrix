@@ -184,6 +184,14 @@ mat *mul(mat *m1, mat *m2){
 	return result;
 }
 
+mat *mat_copy(mat *src){
+	mat *dst = mat_init(src->r,src->c);
+	memcpy(dst->arr,src->arr,sizeof(double)*(src->r*src->c));
+	
+	return dst;
+}
+
+
 void mul_s(mat *matrix,double x){
 	for(int i = 0;i<matrix->r*matrix->c;i++){
 		matrix->arr[i] *= x;
@@ -219,3 +227,6 @@ void mat_free(int argc, ...){
 	}
 	va_end(ap);
 }
+
+
+
