@@ -5,7 +5,6 @@
 #include <stdarg.h>
 
 #include "matrix.h"
-
 double gaussrand();
 
 void print(mat *matrix){

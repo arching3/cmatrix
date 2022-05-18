@@ -1,5 +1,5 @@
-typedef struct _MATRIX{
-	double *arr;
+typedef struct _MATRIX {
+	int *arr;
 	int r;
 	int c;
 } mat;
